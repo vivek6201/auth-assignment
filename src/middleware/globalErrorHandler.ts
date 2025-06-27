@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 
 export const globalErrorHandler = (
   err: unknown,
   req: Request,
-  res: Response,
+  res: Response
 ) => {
   const statusCode = 500;
   const message = "Something went wrong";
