@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ROLE } from "../generated/prisma";
 
 export const userValidation = z
   .object({
@@ -6,6 +7,7 @@ export const userValidation = z
     email: z.string().email(),
     password: z.string().min(8).max(16),
     confirmPassword: z.string().min(8).max(16),
+    role: z.nativeEnum(ROLE),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Password do not match",
@@ -15,4 +17,13 @@ export const userValidation = z
 export const loginValidation = z.object({
   password: z.string().min(8).max(16),
   email: z.string().email(),
+});
+
+export const resetTokenValidation = z.object({
+  email: z.string().email(),
+});
+
+export const resetPassValidation = z.object({
+  password: z.string().min(8).max(16),
+  confirmPassword: z.string().min(8).max(16),
 });

@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { ApiResponse } from "../../utils/ApiResponse";
 import { catchWrapper } from "../../utils/CatchWrapper";
 
-async function getUserHandler(
+async function getAdminHandler(
   req: Request,
   res: Response,
 ) {
@@ -10,8 +10,8 @@ async function getUserHandler(
 
   res
     .status(200)
-    .json(ApiResponse.success(user, "User profile fetched successfully!"));
+    .json(ApiResponse.success(user, "Admin profile fetched successfully!"));
 }
 
-const getUserController = catchWrapper(getUserHandler);
-export default getUserController;
+const getAdminController = catchWrapper(getAdminHandler);
+export default getAdminController;

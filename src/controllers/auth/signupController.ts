@@ -18,12 +18,14 @@ async function signupHandler(req: Request, res: Response, next: NextFunction) {
     email: data.email,
     name: data.name,
     password: data.password,
+    role: data.role,
   });
 
   const token = signJWT({
     email: newUser.email,
     name: newUser.name,
     id: newUser.id,
+    role: newUser.role,
   });
 
   res
