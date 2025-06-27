@@ -29,3 +29,12 @@ PORT = 4001
 JWT_SECRET = mysecret
 APP_URL = http://localhost:4001
 ```
+
+## Routes
+
+- login - ```/api/v1/auth/login```
+- signup - ```/api/v1/auth/signup```
+- me - ```/api/v1/auth/me```
+- admin/me - ```/api/v1/auth/admin/me```
+- generate-reset-token - ```/api/v1/auth/generate-reset-token```
+- reset-pass - ```/api/v1/auth/reset-pass```
